@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const LoginContainer = styled.div`
-  margin: 0 auto;
+  margin: 4rem auto;
   display: flex;
   width: 20rem;
-  height: 40.4375rem;
+  height: 25.4375rem;
   padding: 1.5rem;
   gap: 2.625rem;
   flex-direction: column;
@@ -12,14 +12,14 @@ export const LoginContainer = styled.div`
   align-items: center;
   
   img {
-    width: 11.75rem;
-    height: 4.875rem;
+    width: 9.75rem;
+    height: 3.275rem;
   }
 `;
 
 export const LoginCard = styled.div`
   width: 20rem ;
-  height: 31.68rem;
+  height: 25.68rem;
   padding: 2.31rem;
   display: flex;
   flex-direction: column;

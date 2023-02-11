@@ -10,7 +10,7 @@ export function Login() {
         <LoginHeader>
           <h1>Login</h1>
           <Separator/>
-          <span>Ainda não possui uma conta? <a>Registre-se aqui</a></span>  
+          <span>Ainda não possui uma conta? <a href="/register">Registre-se aqui</a></span>  
         </LoginHeader>
         <LoginForm>
           <LoginFields>

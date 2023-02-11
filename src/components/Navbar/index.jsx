@@ -6,11 +6,7 @@ export function Navbar() {
     <NavbarContainer>
       <img src="" alt="" />
       <NavbarMenu>
-        <MenuItem/>
-        <MenuItem/>
-        <MenuItem/>
       </NavbarMenu>  
-      <Profile/>
     </NavbarContainer>
   )
   
