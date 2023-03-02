@@ -51,7 +51,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100vh;
   }
   
-  body {
+body {
     background: linear-gradient(140deg, #267C10, #38CE47);
     background-repeat: no-repeat;
     background-attachment: fixed;

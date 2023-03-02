@@ -8,11 +8,11 @@ export function Sidebar({activateTab, activeTabIndex}) {
   return(
     <SidebarContainer>
       
-        {activities.map((tab, index ) =>
-          <Tab key={index} onClick={ () => activateTab(index)} isActivated={ index === activeTabIndex }> <span>{tab.title}</span></Tab>
+        {activities.map((activity ) =>
+          <Tab key={activity.index} onClick={ () => activateTab(activity.index)} isActivated={ activity. index === activeTabIndex }> <span>{activity.title}</span></Tab>
         )}
   
-      
+
     </SidebarContainer>
   )
 }

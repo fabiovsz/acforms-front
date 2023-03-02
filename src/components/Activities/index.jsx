@@ -1,19 +1,41 @@
-import { ActiviesFooter, ActivitiesContainer, ActivitiesListContainer, ActivitiesListTable, AddButon, SendButton } from "./styles";
+import { ActivitiesFooter, ActivitiesContainer, ActivitiesListContainer, AddButon, SendButton, EditButton, DeleteButton } from "./styles";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-export function Activities({activityDescription}) {
+export function Activities({activityDescription, activeTypeIndex}) {
+  const [activityData, setactivityData] = useState([]);
+  console.log(activeTypeIndex);
+  const fetchData = () => {
+    return axios.get(`https://api-tp-interdisciplinar.onrender.com/atividades/${localStorage.getItem('userId')}/${activeTypeIndex}`)
+          .then((response) => setactivityData(response.data));
+  }
+
+  useEffect(() => {
+    fetchData();
+  },[activeTypeIndex])
   
-  const activityData = [
-    {
-      index: 1,
-      description: "Projetos",
-      files: "teste.pdf"
-    },
-    {
-      index: 2,
-      description: "Analises",
-      files: "test2.pdf"
-    },
-  ]
+  let deleteActivity = async (idAtividade) => {
+    try {
+      
+      let response = await axios.delete(`https://api-tp-interdisciplinar.onrender.com/atividade/${idAtividade}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "*/*"
+    }})
+      .then(function (response) {
+        console.log(response);
+        window.alert('Atividade deletada com sucesso!')
+        window.location.reload(true);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  
   return (
     <ActivitiesContainer>
       <span>{activityDescription}</span>
@@ -24,25 +46,24 @@ export function Activities({activityDescription}) {
               <tr>
                 <th>#</th>
                 <th>Descrição</th>
-                <th>Arquivos</th>
                 <th>Ação</th>
               </tr>
             </thead>
             <tbody>
-            {activityData.map((activity) => {
-            <tr>
-              <td>{activity.index}</td>
-              <td>{activity.description}</td>
-              <td>{activity.files}</td>
-              <td> <button>X</button> <button>Edit</button></td> 
-            </tr> 
+            {activityData.map((activity, index) => {
+              return(
+              <tr>
+                <td>{index + 1}</td>
+                <td>{activity.descricao}</td>
+                <td> <DeleteButton onClick={ () => deleteActivity(activity.id)}>Delete</DeleteButton></td> 
+              </tr> 
+              )
             })}
             </tbody>
           </table>
-          <ActiviesFooter>
-            <AddButon>Adicionar Atividade</AddButon>
-            <SendButton>Enviar Atividade</SendButton>
-          </ActiviesFooter>
+          <ActivitiesFooter>
+            <AddButon href="/send-activity">Adicionar atividades</AddButon>
+          </ActivitiesFooter>
       </ActivitiesListContainer>
     </ActivitiesContainer>
   )

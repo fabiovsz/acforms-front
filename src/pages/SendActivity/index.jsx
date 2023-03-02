@@ -1,24 +1,24 @@
 import { useState } from "react";
-import { Activities } from "../../components/Activities";
+import FormActivity from "../../components/FormActivity";
 import { Navbar } from "../../components/Navbar";
 import { Sidebar } from "../../components/Sidebar";
-import { ActivityPage, HomeContainer } from "./styles"
-import { activities } from "../../activities"
+import { HomeContainer } from "../MyForm/styles";
+import { SendActivityContainer } from "./styles";
 
-export function MyForm() {
-  
+export function SendActivity() {
   const [activeTabIndex, setactiveTabIndex] = useState(1);
   
   function activateTab(index) {
     setactiveTabIndex(index)
   }
+  
   return (
     <HomeContainer>
       <Navbar/>
-      <ActivityPage>
+      <SendActivityContainer>
         <Sidebar activateTab={activateTab} activeTabIndex={activeTabIndex}/>
-        <Activities activityDescription={activities[activeTabIndex - 1 ].title} activeTypeIndex={activeTabIndex}/>  
-      </ActivityPage>
+        <FormActivity activeTabIndex={activeTabIndex} />
+      </SendActivityContainer>
     </HomeContainer>
   )
 }

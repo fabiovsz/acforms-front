@@ -19,7 +19,7 @@ export const RegisterContainer = styled.div`
 `;
 
 export const RegisterCard = styled.div`
-  width: 39rem;
+  width: 48rem;
   height: 100%;
   padding: 1.6rem;
   display: flex;
@@ -28,6 +28,7 @@ export const RegisterCard = styled.div`
   background: #FFF;
   border: 1px solid #fff;
   border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   
   h1 {
     margin-bottom: 0.5rem;
@@ -38,14 +39,26 @@ export const RegisterCard = styled.div`
 `;
 
 export const RegisterForm = styled.form`
+  display: flex;
   flex: 1;
   margin-top: 1rem;
   height: 10rem;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 `;
+
+export const Grid = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+`
+export const GridContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+`
+
 
 export const FormField = styled.div`
   display: flex;

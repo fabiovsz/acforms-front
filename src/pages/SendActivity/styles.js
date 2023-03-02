@@ -4,13 +4,9 @@ export const HomeContainer = styled.div`
   background: #F8F8FA;
   display: flex;
   flex-direction: column;
-  height: 59rem;
-  
 `
-
-export const ActivityPage = styled.div`
+export const SendActivityContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  
+  gap: 1.3rem;
+
 `

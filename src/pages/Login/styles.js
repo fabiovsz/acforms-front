@@ -27,6 +27,8 @@ export const LoginCard = styled.div`
   background: #FFF;
   border: 1px solid #fff;
   border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
 `;
 
 export const LoginHeader = styled.div`
