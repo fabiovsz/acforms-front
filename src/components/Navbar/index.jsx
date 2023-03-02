@@ -19,7 +19,11 @@ export function Navbar() {
         <NavbarMenuItem href="https://drive.google.com/drive/u/0/folders/0B_3ForV0vf3HT3Z2WWJwbWxTRU0" target="_blank">
           <img src="src/assets/manual-icon.svg" alt="" width="25px"/>  
           <span>Manual AC</span>
-        </NavbarMenuItem> 
+        </NavbarMenuItem>
+        <NavbarMenuItem href="/login" target="_blank">
+          <img src="src/assets/logout.png" alt="" width="25px"/>  
+          <span>Sair</span>
+        </NavbarMenuItem>  
       </NavbarMenu>
       <Profile>
       </Profile>

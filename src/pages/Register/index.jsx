@@ -1,9 +1,10 @@
 import { Separator } from "../Login/styles";
 import { FormField, RegisterCard, RegisterForm, RegisterContainer, RegisterButton, Grid, GridContainer } from "./styles";
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 export function Register() {
-  
+  const navigate = useNavigate()
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -28,6 +29,7 @@ export function Register() {
       .then(function (response) {
         console.log(response);
         window.alert('Cadastrado com sucesso!')
+        navigate("/login")
       })
       .catch(function (error) {
         console.error(error);
