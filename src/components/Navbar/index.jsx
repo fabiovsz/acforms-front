@@ -20,7 +20,7 @@ export function Navbar() {
           <img src="src/assets/manual-icon.svg" alt="" width="25px"/>  
           <span>Manual AC</span>
         </NavbarMenuItem>
-        <NavbarMenuItem href="/login" target="_blank">
+        <NavbarMenuItem href="/login">
           <img src="src/assets/logout.png" alt="" width="25px"/>  
           <span>Sair</span>
         </NavbarMenuItem>  
