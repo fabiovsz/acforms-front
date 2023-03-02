@@ -27,6 +27,7 @@ export function Register() {
     }})
       .then(function (response) {
         console.log(response);
+        window.alert('Cadastrado com sucesso!')
       })
       .catch(function (error) {
         console.error(error);
